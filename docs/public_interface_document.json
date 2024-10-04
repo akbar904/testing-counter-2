@@ -1,7 +1,7 @@
 {
   "package_name": "com.example.example_app",
-  "project_description": "A Very Good Project created by Very Good CLI, featuring a counter app with internationalization support and multiple flavors.",
-  "architecture_overview": "The application follows a modular architecture with separate folders for l10n (localization), app, and counter features. It uses the BLoC pattern with Cubit for state management.",
+  "project_description": "A Very Good Project created by Very Good CLI, featuring a counter app with internationalization support and multiple flavors. The counter now increments by 2 with each button press.",
+  "architecture_overview": "The application follows a modular architecture with separate folders for l10n (localization), app, and counter features. It uses the BLoC pattern with Cubit for state management. The counter increment functionality has been updated to increase by 2.",
   "folder_structure": {
     "lib": {
       "app": {
@@ -79,7 +79,7 @@
       "methods": [
         {
           "name": "increment",
-          "description": "Increments the counter value.",
+          "description": "Increments the counter value by 2.",
           "parameters": [],
           "return_type": "void"
         },
@@ -222,11 +222,11 @@
     {
       "name": "CounterCubit",
       "state": "int",
-      "description": "Manages the state of the counter.",
+      "description": "Manages the state of the counter, incrementing by 2.",
       "methods": [
         {
           "name": "increment",
-          "description": "Increments the counter value.",
+          "description": "Increments the counter value by 2.",
           "parameters": [],
           "return_type": "void"
         },
@@ -269,13 +269,12 @@
     }
   ],
   "sequence_diagram": "@startuml\nactor User\nUser -> CounterPage: Opens app\nCounterPage -> CounterCubit: Creates\nUser -> CounterView: Taps increment button\nCounterView -> CounterCubit: increment()\nCounterCubit -> CounterView: Updated state\nUser -> CounterView: Taps decrement button\nCounterView -> CounterCubit: decrement()\nCounterCubit -> CounterView: Updated state\n@enduml",
-  "state_management_flow": "State is managed using the Cubit pattern. The CounterCubit manages the counter value as an integer state. Actions such as increment and decrement are handled by methods within the CounterCubit, which update the state accordingly.",
+  "state_management_flow": "State is managed using the Cubit pattern. The CounterCubit manages the counter value as an integer state. Actions such as increment and decrement are handled by methods within the CounterCubit, which update the state accordingly. The increment method now increases the counter by 2.",
   "navigation_flow": "The application starts with the App widget, which sets up the MaterialApp and displays the CounterPage. The CounterPage contains the CounterView, which shows the current counter value and provides buttons for incrementing and decrementing the counter.",
   "pubspec_yaml": {
     "name": "example_app",
     "description": "A Very Good Project created by Very Good CLI.",
     "version": "1.0.0+1",
-    "publish_to": "none",
     "environment": {
       "sdk": ">=3.5.0 <4.0.0"
     },
